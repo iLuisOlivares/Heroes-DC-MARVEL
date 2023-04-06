@@ -1,6 +1,13 @@
+import { AppRouter } from "./router/AppRouter"
+import { Navbar } from "./UI/Components/NavBar"
+
 
 export const HeroesApp = () => {
     return (
-        <h1>HeroesApp</h1>
+        <>
+            <Navbar></Navbar>
+            <AppRouter></AppRouter>
+
+        </>
     )
 }
