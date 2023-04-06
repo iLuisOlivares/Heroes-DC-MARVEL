@@ -1,9 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { Dc } from "../heroes/pages/Dc"
-import { Marvel } from "../heroes/pages/Marvel"
-
-import { Home } from "../pages/Home"
-import { Login } from "../pages/Login"
+import { Dc, Marvel } from "../heroes";
+import { Login } from "../auth";
+import { Home } from "../pages";
 
 export const AppRouter = () => {
     return (
