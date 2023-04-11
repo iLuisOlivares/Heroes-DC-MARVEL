@@ -11,7 +11,7 @@ export const HeroCard = ({
     const imgUrl = `src/assets/${id}.jpg`
 
     return (
-        <div className="col d-flex justify-content-center align-items-center p-2">
+        <div className="animate__animated animate__pulse col d-flex justify-content-center align-items-center p-2">
 
             <div className="card" style={{ "width": "18rem" }}>
                 <img src={imgUrl} className="card-img-top" alt="..." />

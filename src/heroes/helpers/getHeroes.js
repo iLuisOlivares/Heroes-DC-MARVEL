@@ -17,3 +17,8 @@ export const getHeroByID = (id) => {
 
     return heroes.find((hero) => hero.id === id);
 }
+
+export const getHeroByName = (name) => {
+
+    return heroes.filter((hero) => hero.superhero.toLowerCase().includes(name.toLowerCase()));
+}

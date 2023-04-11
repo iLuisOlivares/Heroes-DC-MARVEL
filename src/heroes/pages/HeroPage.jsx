@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { CollapseHero } from "../components/CollapseHero";
 import { getHeroByID } from "../helpers/getHeroes";
 export const HeroPage = () => {
 
     const { id } = useParams();
-    const hero = getHeroByID(id);
+    const hero = useMemo(() => getHeroByID(id), [id]);
     const navigate = useNavigate();
     if (!hero) {
         return <Navigate to="/main" />
@@ -17,17 +17,17 @@ export const HeroPage = () => {
     const imgUrl = `../src/assets/${id}.jpg`;
 
     return (
-        <div className="row mt-5">
+        <div className="m-5 row animate__animated animate__fadeInLeft">
 
 
             <div className="alert alert-warning" role="alert">
                 ℹ️ Aviso - Pagina en modificacion!
             </div>
             <div className="col-4">
-                <img src={imgUrl} alt={hero.id} className="img-thumbnail" />
+                <img src={imgUrl} alt={hero.id} className="img-thumbnail " />
 
             </div>
-            <div className="col-8">
+            <div className="col-8 ">
                 <h3>{hero.superhero}</h3>
                 <p className="text-secondary">{hero.publisher}</p>
                 <div className="pt-3">
