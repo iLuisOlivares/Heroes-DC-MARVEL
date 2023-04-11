@@ -11,7 +11,7 @@ export const HeroesList = ({ publisher }) => {
 
         <div className='row d-flex justify-content-center align-items-center'>
             {heroes.map(hero => (
-                <HeroCard key={hero.id} id={hero.id} superhero={hero.superhero} publisher={hero.publisher}></HeroCard>
+                <HeroCard publisher={hero.publisher} key={hero.id} id={hero.id} superhero={hero.superhero} alter_ego={hero.alter_ego} characters={hero.characters}></HeroCard>
             ))
             }
         </div>

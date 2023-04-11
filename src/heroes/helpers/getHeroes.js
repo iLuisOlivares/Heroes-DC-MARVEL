@@ -12,3 +12,8 @@ export const getHeroesByPublisher = (publisher) => {
 
 
 }
+
+export const getHeroByID = (id) => {
+
+    return heroes.find((hero) => hero.id === id);
+}
