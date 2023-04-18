@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { AppRouter } from "./router/AppRouter"
 import { Navbar } from "./UI"
+import { AuthProvider } from "./auth";
 
 
 export const HeroesApp = () => {
@@ -9,9 +10,13 @@ export const HeroesApp = () => {
 
     return (
         <>
-            {auth && <Navbar></Navbar>}
+            <AuthProvider>
+                {auth && <Navbar></Navbar>}
+                <AppRouter></AppRouter>
 
-            <AppRouter></AppRouter>
+
+            </AuthProvider>
+
 
         </>
     )

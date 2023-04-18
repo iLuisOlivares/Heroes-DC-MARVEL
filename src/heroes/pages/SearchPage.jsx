@@ -9,13 +9,19 @@ export const SearchPage = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+
     const { q = '' } = queryString.parse(location.search);
+    const heroes = getHeroByName(q);
+
     const { buscador, onInputChange } = useForm({
         buscador: q
     });
 
 
-    const heroes = getHeroByName(q);
+    const showSearch = (q.length === 0);
+    const showError = (q.length > 0) && heroes.length === 0;
+
+
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -39,36 +45,38 @@ export const SearchPage = () => {
                 <div className="my-5 col">
                     <h3>Resultados</h3>
 
+
+                    <div className="alert alert-primary animate__animated animate__fadeIn"
+                        style={{ display: showSearch ? '' : 'none' }}>
+                        Search a hero
+                    </div>
+
+                    <div className="alert alert-danger animate__animated animate__fadeIn"
+                        style={{ display: showError ? '' : 'none' }}>
+                        Heroe con caracteres <b>{q} </b>  no encontrado!! 🦹
+                    </div>
                     {
-                        q === '' ? <div className="alert alert-primary animate__animated animate__pulse">
-                            Busca un heroe!! 🦸
-                        </div> :
+                        // q === '' ?
+                        //     <div className="alert alert-primary animate__animated animate__pulse">
+                        //         Busca un heroe!! 🦸
+                        //     </div> :
 
-                            heroes.length === 0 ?
-                                <div className="alert alert-danger animate__animated animate__pulse">
-                                    Heroe con caracteres <b>{q} </b>  no encontrado!! 🦹
-                                </div>
-                                :
-
-                                heroes.map(hero => (
-                                    <HeroCard publisher={hero.publisher} key={hero.id} id={hero.id} superhero={hero.superhero} alter_ego={hero.alter_ego} characters={hero.characters}></HeroCard>
-                                ))
+                        //     heroes.length === 0 ?
+                        //         <div className="alert alert-danger animate__animated animate__pulse">
+                        //             Heroe con caracteres <b>{q} </b>  no encontrado!! 🦹
+                        //         </div>
+                        //         :
 
 
-
+                        heroes.map(hero => (
+                            <HeroCard publisher={hero.publisher} key={hero.id} id={hero.id} superhero={hero.superhero} alter_ego={hero.alter_ego} characters={hero.characters}></HeroCard>
+                        ))
 
                     }
 
 
-
-
-
-
-
                 </div>
             </div>
-
-
 
         </div >
     )
