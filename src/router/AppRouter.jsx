@@ -3,15 +3,20 @@ import { HeroesRoutes } from "../heroes";
 import { Login } from "../auth";
 import { Navbar } from "../UI";
 import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
+
+
     return (
         <>
 
             <Routes>
 
-                <Route path="/login" element={<Login></Login>} />
-
+                <Route path="/login" element={
+                    <PublicRoute>
+                        <Login></Login>
+                    </PublicRoute>} />
 
                 <Route path="/*" element={
                     <PrivateRoute>
