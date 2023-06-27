@@ -1,7 +1,22 @@
+export const fetchHeroes = async () => {
+
+    const options = {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    };
+
+
+    const response = await fetch("http://127.0.0.1:8000/api/superheroes/", options);
+    const heroes = await response.json();
+
+    console.log(heroes)
+    return heroes;
+}
+
 export const heroes = [
     {
         'id': 'dc-batman',
-        'superhero': 'Batman',
+        'superhero': 'Batman    ',
         'publisher': 'DC Comics',
         'alter_ego': 'Bruce Wayne',
         'first_appearance': 'Detective Comics #27',

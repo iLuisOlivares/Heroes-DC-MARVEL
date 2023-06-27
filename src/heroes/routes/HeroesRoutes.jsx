@@ -7,7 +7,7 @@ export const HeroesRoutes = () => {
     return (
         <>
             <Navbar></Navbar>
-            <div className="container">
+            <div>
                 <Routes>
 
                     <Route path="/" element={<Home />}></Route>
@@ -21,9 +21,9 @@ export const HeroesRoutes = () => {
                     <Route path="/hero/:id" element={<HeroPage />}></Route>
 
 
-                </Routes>
+                </Routes >
 
-            </div>
+            </div >
 
         </>
 

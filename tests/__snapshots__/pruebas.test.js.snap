@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <HeroCard> debe Hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="col"
+  >
+    <div
+      class="card card_hero"
+    >
+      <div
+        class="row g-0 height-100"
+      >
+        <div
+          class="col-md-8"
+        >
+          <div
+            class="card-body"
+          >
+            <h5
+              class="card-title mt-4"
+            >
+              Batman
+            </h5>
+            <p
+              class="card-text card_text"
+            >
+              Batman es un superhéroe que lucha contra el crimen en la ciudad de Gotham. Es conocido por su astucia, su habilidad para el combate cuerpo a cuerpo y sus gadgets tecnológicos.
+            </p>
+            <a
+              class="text"
+              href="/hero/Batman"
+              style="color: rgb(140, 48, 245); text-decoration: none;"
+            >
+              Explorar ➤
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-md-4"
+        >
+          <img
+            alt="..."
+            class="img-fluid rounded card-image"
+            src="https://res.cloudinary.com/iluiss/image/upload/v1687543445/Heroes/unblscke0mqpi7vqoxtd.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

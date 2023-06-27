@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../UI/hooks/useForm";
-import queryString from 'query-string'
+// import queryString from 'query-string'
 import { getHeroByName } from "../helpers/getHeroes";
 import { HeroCard } from "../components/HeroCard";
 
@@ -10,7 +10,7 @@ export const SearchPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const { q = '' } = queryString.parse(location.search);
+    // const { q = '' } = queryString.parse(location.search);
     const heroes = getHeroByName(q);
 
     const { buscador, onInputChange } = useForm({

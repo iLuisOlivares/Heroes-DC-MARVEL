@@ -3,30 +3,32 @@ import { Link } from "react-router-dom"
 export const HeroCard = ({
     id = 'dc-batman',
     superhero = 'Batman',
-    alter_ego = 'Bruce wayne',
-    characters = "Bruce Wayne",
-    publisher = "Dc-comics"
+    description,
+    image
 }) => {
 
-    const imgUrl = `src/assets/${id}.jpg`
+
+    description = description.length > 200 ? description.slice(0, 200) + "..." : description;
 
     return (
-        <div className="animate__animated animate__pulse col d-flex justify-content-center align-items-center p-2">
 
-            <div className="card" style={{ "width": "18rem" }}>
-                <img src={imgUrl} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">{superhero}</h5>
-                    <p>{publisher}</p>
+        <div className="col">
+            <div className="card card_hero">
+                <div className="row g-0 height-100">
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h5 className="card-title mt-4">{superhero}</h5>
+                            <p className="card-text card_text">{description}</p>
+                            <Link style={{ "color": "#8C30F5", "textDecoration": "none" }} className="text" to={`/hero/${id}`}>Explorar ➤</Link>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <img src={image} className="img-fluid rounded card-image" alt="..." />
 
-                    {/* {
-                        alter_ego == characters ? <p>{alter_ego}</p> : <p>{characters}</p>
-                    } */}
-                    <Link className="text-danger" to={`/hero/${id}`}>Ver mas</Link>
+                    </div>
                 </div>
-
-            </div >
-
+            </div>
         </div>
+
     )
 }

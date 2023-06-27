@@ -14,17 +14,24 @@ export const Navbar = () => {
         });
     }
     return (
-        <nav className="navbar navbar-expand-sm  p-4 navbar-white bg-white shadow p-3 mb-5 bg-body-tertiary rounded"  >
+        <nav className="navbar navbar-expand-sm navbar-white bg-white shadow  mb-4 bg-body-tertiary rounded"  >
 
             <Link
                 className="navbar-brand"
                 to="/"
             >
-                Asociaciones
+                <img src="https://res.cloudinary.com/iluiss/image/upload/v1687663912/Heroes/satq2o1ic9485uns9hio.png" alt="" />
             </Link>
 
             <div className="navbar-collapse">
                 <div className="navbar-nav">
+
+                    <NavLink
+                        className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+                        to="/"
+                    >
+                        Home
+                    </NavLink>
 
                     <NavLink
                         className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
@@ -40,12 +47,6 @@ export const Navbar = () => {
                         DC
                     </NavLink>
 
-                    <NavLink
-                        className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
-                        to="/search"
-                    >
-                        Buscador
-                    </NavLink>
                 </div>
             </div>
 
