@@ -16,47 +16,49 @@ export const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-sm navbar-white bg-white shadow  mb-4 bg-body-tertiary rounded"  >
 
-            <Link
-                className="navbar-brand"
-                to="/"
-            >
-                <img src="https://res.cloudinary.com/iluiss/image/upload/v1687663912/Heroes/satq2o1ic9485uns9hio.png" alt="" />
-            </Link>
 
-            <div className="navbar-collapse">
-                <div className="navbar-nav">
+            <div className="navbar-collapse d-flex justify-content-between mx-5">
+                <div className="box-width navbar-nav">
 
                     <NavLink
-                        className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                         to="/"
                     >
                         Home
                     </NavLink>
 
                     <NavLink
-                        className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                         to="/marvel"
                     >
                         Marvel
                     </NavLink>
 
                     <NavLink
-                        className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                         to="/dc"
                     >
                         DC
                     </NavLink>
 
                 </div>
+
+                <Link
+                    to="/"
+                >
+                    <img src="https://res.cloudinary.com/iluiss/image/upload/v1687663912/Heroes/satq2o1ic9485uns9hio.png" alt="" />
+                </Link>
+
+                <div className="box-width">
+                    <ul className="navbar-nav ">
+
+                        <span style={{ color: '#0C89BF' }} className='nav-item nav-link '> {user?.name}</span>
+                        <button className='nav-item nav-link ' onClick={onLogout}> Logout</button>
+                    </ul>
+                </div>
             </div>
 
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-                <ul className="navbar-nav ml-auto">
 
-                    <span className='nav-item nav-link text-warning'> {user?.name}</span>
-                    <button className='nav-item nav-link ' onClick={onLogout}> Logout</button>
-                </ul>
-            </div>
         </nav >
     )
 }
