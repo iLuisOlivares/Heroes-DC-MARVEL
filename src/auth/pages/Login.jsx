@@ -9,7 +9,7 @@ export const Login = () => {
 
     const onLogin = () => {
         login("Luis")
-        navigate('/main', {
+        navigate('/', {
             replace: true
         });
     }

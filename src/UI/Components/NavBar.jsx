@@ -14,7 +14,7 @@ export const Navbar = () => {
         });
     }
     return (
-        <nav className="navbar navbar-expand-sm navbar-white bg-white shadow  mb-4 bg-body-tertiary rounded"  >
+        <nav className="navbar navbar-expand-sm navbar-white bg-white shadow-sm  bg-body-tertiary rounded"  >
 
 
             <div className="navbar-collapse d-flex justify-content-between mx-5">

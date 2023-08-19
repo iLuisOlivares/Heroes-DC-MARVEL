@@ -45,6 +45,56 @@ line-height: 20px;
 }
 
 
+.wave_container {
+    overflow: hidden;
+    position: relative;
+}
+
+.wave1{
+    width: 140%;
+    left: 40%;
+    top: 0%;
+}
+.wave_right{
+    width: 150%;
+    z-index: -1;
+    left: 120%;
+    top: 0%;
+}
+
+.wave_left{
+    width: 80%;
+    z-index: -1;
+    left: 40%;
+    top: 0%;
+
+}
+
+.wave2{
+    width: 100%;
+    left: 75%;
+    top: -5%;
+}
+@media only screen and (max-width: 992px) {
+    .wave1{
+        width: 150%;
+        }
+    
+    .wave2{
+        width: 150%;
+
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .wave1{
+        width: 200%;
+        }
+    
+    .wave2{
+        width: 200%;
+
+    }
+  }
 .card-image{
 object-fit: cover;
 height: 100%;

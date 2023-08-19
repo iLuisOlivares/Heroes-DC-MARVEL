@@ -2,13 +2,14 @@ import React, { useMemo } from 'react'
 import { getHeroesByPublisher } from '../helpers/getHeroes'
 import { HeroCard } from './HeroCard';
 import useFetch from '../../UI/hooks/useFetch';
+import { HeroListLoading } from './HeroListLoading';
 export const HeroesList = ({ publisher }) => {
 
     // const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
     const { data, error, isLoading } = useFetch('http://127.0.0.1:8000/api/characters/?search=' + publisher.replace(' ', '+'));
     return (
-        <div style={{ "backgroundColor": "#0B1E51", "padding": "20px", "minHeight": "100vh" }}>
-            {isLoading ? <p className='text-light'>Loading...</p>
+        <div style={{ "backgroundColor": "#3c3d41", "padding": "20px", "minHeight": "100vh" }}>
+            {isLoading ? <HeroListLoading></HeroListLoading>
                 : error
                     ? <p>Error: {error.message} </p>
                     : <div class="row row-cols-1 row-cols-md-3 g-4">
