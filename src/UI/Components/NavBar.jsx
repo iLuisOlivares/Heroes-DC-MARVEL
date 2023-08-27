@@ -40,19 +40,25 @@ export const Navbar = () => {
                     >
                         DC
                     </NavLink>
+                    <NavLink
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
+                        to="/docs"
+                    >
+                        Docs
+                    </NavLink>
 
                 </div>
 
                 <Link
                     to="/"
                 >
-                    <img src="https://res.cloudinary.com/iluiss/image/upload/v1687663912/Heroes/satq2o1ic9485uns9hio.png" alt="" />
+                    <img className='non' style={{ 'height': '60px' }} src="https://res.cloudinary.com/iluiss/image/upload/v1693087901/Heroes/osnhrbarsjsymztpajie.png" alt="" />
                 </Link>
 
                 <div className="box-width">
                     <ul className="navbar-nav ">
 
-                        <span style={{ color: '#0C89BF' }} className='nav-item nav-link '> {user?.name}</span>
+                        <span style={{ color: '#ED1D24' }} className='nav-item nav-link '> {user?.name}</span>
                         <button className='nav-item nav-link ' onClick={onLogout}> Logout</button>
                     </ul>
                 </div>

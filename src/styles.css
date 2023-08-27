@@ -1,3 +1,9 @@
+body{
+    scrollbar-gutter: stable both-edges;
+    overflow-y: scroll;
+}
+
+
 .banner{
 
     width: 1000px;
@@ -12,8 +18,9 @@ text-align: center;
 text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 /* Heading/H1 */
 font-size: 52px;
-height: 200px;
+max-height: 200px;
 width: 800px;
+margin: 0;
 font-family: Inter;
 font-weight: 800;
 }
@@ -48,6 +55,13 @@ line-height: 20px;
 .wave_container {
     overflow: hidden;
     position: relative;
+}
+
+.wave_cont {
+    overflow: hidden;
+    position: relative;
+    height: 89vh;
+    z-index:0;
 }
 
 .wave1{
@@ -112,7 +126,31 @@ background-position: bottom;
 .logo{
     height: 30px;
 }
+.logo-home{
+    height: 60px;
+}
 
 .card_hero{
     height: 306.656px;
 }
+
+.inp:focus {
+    border-color: rgb(158, 149, 149);
+    box-shadow: 0 1px 1px rgba(255, 246, 241, 0.075)inset, 0 0 8px rgba(245, 229, 213, 0.6);
+    outline:  2 none;
+}
+
+.inp:focus {
+    outline: 0 none;
+}
+
+
+.non {
+    user-select: none;
+  }
+  .non::selection {
+    background: none;
+  }
+  .non::-moz-selection {
+    background: none;
+  }

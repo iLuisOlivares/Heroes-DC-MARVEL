@@ -1,13 +1,13 @@
 import React from 'react'
 import wave1 from '../../assets/Banner wave 1.png'
-export const BannerPublisher = ({ img, publisher, color }) => {
+export const BannerPublisher = ({ handlelSearch, img, publisher, color }) => {
 
     const style = {
         backgroundColor: color,
     };
 
     return (
-        <div className="wave_container">
+        <div className="non wave_container">
             <div style={style} className='banner'>
                 <div className='d-flex justify-content-evenly align-items-center h-100'>
 
@@ -28,8 +28,7 @@ export const BannerPublisher = ({ img, publisher, color }) => {
                     <div className='banner__text'>
                         <p>{publisher} </p>
                         <div className="input-group">
-                            <input type="search" className="form-control" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
-                            <button type="button" className="btn btn-dark">Buscar</button>
+                            <input type="search" onChange={handlelSearch} className="text-dark form-control" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
                         </div>
                     </div>
 
@@ -38,7 +37,7 @@ export const BannerPublisher = ({ img, publisher, color }) => {
 
             </div>
 
-        </div>
+        </div >
 
     )
 }
